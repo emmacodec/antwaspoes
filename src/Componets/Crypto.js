@@ -1,7 +1,9 @@
 import React from 'react'
 import CryptoItem from './CryptoItem';
+import {Link} from 'react-router-dom'
 
 import './Coin.css';
+import Coin from '../routes/Coin';
 
 const Crypto = (props) => {
   return (
@@ -19,7 +21,9 @@ const Crypto = (props) => {
             {/*mapping through data from API*/}
             {props.crypto.map((crypto) => {
                 return (
-                    <CryptoItem crypto={crypto} key={crypto.id} />
+                    <Link to={`/Coin/${crypto.id}`} element={<Coin />} key={crypto.id}>
+                        <CryptoItem crypto={crypto}  />
+                    </Link>
                 )
             })}
         </div>

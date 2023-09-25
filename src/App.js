@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Crypto from "./Componets/Crypto";
 import Navbar from "./Componets/Navbar";
+import {Route, Routes} from 'react-router-dom'
+import Coin from "./routes/Coin";
 
 function App() {
 
@@ -21,7 +23,12 @@ useEffect(() => {
   return (
     <>
     <Navbar />
-     <Crypto crypto={crypto} />
+     <Routes>
+      <Route path="/" element={<Crypto crypto={crypto} />} />
+      <Route path="/Coin" element={<Coin />}>
+        <Route path=":coinId" element={<Coin />} />
+      </Route>
+     </Routes>
     </>
   );
 }
