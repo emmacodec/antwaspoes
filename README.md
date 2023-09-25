@@ -1,0 +1,1 @@
+In this project, i built a React JS application centered on cryptocurrencies. I used hooks such as useState, useEffect while using axios to interact with the coin Gecko API. Also used react-router-dom to have dynamic routes.
