@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
 
+import './coin.css';
+
 const Coin = () => {
 
     const params = useParams()
@@ -16,11 +18,25 @@ useEffect(() =>{
     }).catch((error) => {
         console.log(error)
     })
-},[])
+}, [])
 
   return (
     <div>
-      <h1>{coin.id}</h1>
+      <div className='coin-container'>
+        <div className='content'>
+            <h1>{coin.name}</h1>
+        </div>
+        <div className='content'>
+            <div className='rank'>
+                <span className='rank-btn'>Rank #{coin.market_cap_rank}</span>
+            </div>
+            <div className='info'>
+                <div className='coin-heading'>
+                    {coin.image ? <img src={coin.image.small} alt='' /> : null}
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
   )
 }
