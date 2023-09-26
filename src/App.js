@@ -5,6 +5,7 @@ import Navbar from "./Componets/Navbar";
 import {Route, Routes} from 'react-router-dom'
 import Coin from "./routes/Coin";
 
+
 function App() {
 
 const [crypto, setCrypto] = useState([]);
@@ -14,7 +15,7 @@ const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&orde
 useEffect(() => {
   axios.get(url).then((response) => {
     setCrypto(response.data)
-    console.log(response.data[0]);
+    //console.log(response.data[0]);
   }).catch((error) => {
     console.log(error)
   })
